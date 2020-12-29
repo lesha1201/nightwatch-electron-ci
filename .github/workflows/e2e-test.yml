@@ -16,10 +16,6 @@ jobs:
     env:
       DISPLAY: :99
 
-    defaults:
-      run:
-        working-directory: src
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
