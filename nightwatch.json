@@ -16,7 +16,7 @@
       "desiredCapabilities": {
         "browserName": "chrome",
         "chromeOptions": {
-          "binary": "node_modules/chromium/lib/chromium/chrome-linux/chrome"
+          "binary": "node_modules/electron/dist/electron"
         }
       }
     },
