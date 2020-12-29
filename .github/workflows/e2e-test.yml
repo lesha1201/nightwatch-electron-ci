@@ -1,0 +1,56 @@
+name: E2E Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-e2e:
+    name: Runs E2E tests
+    runs-on: ubuntu-18.04
+
+    env:
+      DISPLAY: :99
+
+    defaults:
+      run:
+        working-directory: src
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y xvfb
+
+      - name: Mock display
+        run: |
+          Xvfb $DISPLAY -ac -screen 0 1022x756x8 &
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
+
+      - name: Run E2E tests
+        run: npm run nightwatch -- --env ci

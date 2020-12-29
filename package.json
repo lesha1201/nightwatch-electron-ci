@@ -1,0 +1,17 @@
+{
+  "name": "nightwatch-ci-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "nightwatch": "nightwatch"
+  },
+  "keywords": [],
+  "author": "Alexey Ryabov",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^80.0.2",
+    "chromium": "^3.0.2",
+    "nightwatch": "^1.5.1"
+  }
+}

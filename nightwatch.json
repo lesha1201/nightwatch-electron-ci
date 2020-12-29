@@ -1,0 +1,32 @@
+{
+  "src_folders": ["tests/e2e"],
+
+  "webdriver": {
+    "start_process": true,
+    "server_path": "node_modules/.bin/chromedriver",
+    "port": 4444,
+    "cli_args": ["--verbose"]
+  },
+
+  "test_settings": {
+    "default": {
+      "globals": {
+        "waitForConditionTimeout": 10000
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "binary": "node_modules/chromium/lib/chromium/chrome-linux/chrome"
+        }
+      }
+    },
+    "ci": {
+      "extends": "default",
+      "desiredCapabilities": {
+        "chromeOptions": {
+          "args": ["--headless", "--no-sandbox", "--disable-gpu"]
+        }
+      }
+    }
+  }
+}
