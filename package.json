@@ -11,8 +11,8 @@
   "author": "Alexey Ryabov",
   "license": "ISC",
   "devDependencies": {
-    "chromedriver": "^80.0.2",
-    "electron": "^8.5.5",
-    "nightwatch": "^1.5.1"
+    "electron": "^11.4.12",
+    "electron-chromedriver": "^11.0.0",
+    "nightwatch": "^1.7.8"
   }
 }

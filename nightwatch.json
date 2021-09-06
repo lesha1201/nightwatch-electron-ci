@@ -11,7 +11,7 @@
   "test_settings": {
     "default": {
       "globals": {
-        "waitForConditionTimeout": 10000
+        "waitForConditionTimeout": 5000
       },
       "desiredCapabilities": {
         "browserName": "chrome",
@@ -25,7 +25,7 @@
       "extends": "default",
       "desiredCapabilities": {
         "chromeOptions": {
-          "args": ["--headless", "--no-sandbox", "--disable-gpu"]
+          "args": ["app=.", "--headless", "--no-sandbox", "--disable-gpu"]
         }
       }
     }
