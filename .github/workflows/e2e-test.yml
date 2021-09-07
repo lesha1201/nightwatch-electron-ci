@@ -11,7 +11,7 @@ on:
 jobs:
   test-e2e:
     name: Runs E2E tests
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     env:
       DISPLAY: :99
@@ -23,7 +23,7 @@ jobs:
       - name: Use Node.js 12
         uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Install system dependencies
         run: |

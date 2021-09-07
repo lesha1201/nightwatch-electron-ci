@@ -4,15 +4,15 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron . --headless --enable-logging",
     "nightwatch": "nightwatch"
   },
   "keywords": [],
   "author": "Alexey Ryabov",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^11.4.12",
-    "electron-chromedriver": "^11.0.0",
+    "electron": "^14.0.0",
+    "electron-chromedriver": "^14.0.0",
     "nightwatch": "^1.7.8"
   }
 }
